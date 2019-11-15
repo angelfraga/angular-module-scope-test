@@ -15,6 +15,12 @@ import { ChildModule } from './child/child.module';
     BrowserModule,
     FormsModule,
     AwesomeModule,
+    /**
+     *  If 
+     *  AwesomeModule.forRoot([
+     *    { provide: AWESOME_SERVICE , useClass: CustomRootAwesomeService  }
+     *  ]),
+     */
     ChildModule, 
     RouterModule.forRoot([
       { 
@@ -23,7 +29,10 @@ import { ChildModule } from './child/child.module';
       },
       { path: '',   redirectTo: 'feature', pathMatch: 'full' },
     ])
-  ],
+  ], 
+  providers: [
+    { provide: AWESOME_SERVICE , useClass: CustomRootAwesomeService  }
+  ], 
   declarations: [ AppComponent ],
   bootstrap:    [ AppComponent ]
 })

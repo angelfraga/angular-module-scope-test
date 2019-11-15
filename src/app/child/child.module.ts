@@ -8,9 +8,13 @@ import { CustomChildAwesomeService } from './custom-child-awesome.service';
 @NgModule({
   imports: [
     CommonModule,
-    AwesomeModule.forChild([
-      { provide: AWESOME_SERVICE , useClass: CustomChildAwesomeService  }
-    ])
+    AwesomeModule
+    /**
+     * 
+     * AwesomeModule.forChild([
+     *  { provide: AWESOME_SERVICE , useClass: CustomChildAwesomeService  }
+     * ])
+     */
   ],
   declarations: [ChildComponent],
   exports: [ChildComponent]

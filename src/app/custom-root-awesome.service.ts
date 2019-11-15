@@ -7,7 +7,7 @@ export class CustomRootAwesomeService implements AwesomeService {
   private registry = new Map<string, string>();
 
   constructor() {
-    this.registry.set('from', 'Custom Root');
+    this.registry.set('from', 'CustomRootAwesomeService');
   }
 
   get(key: string): string {

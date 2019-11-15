@@ -18,7 +18,7 @@ import { CustomFeatureAwesomeService } from './custom-feature-awesome.service';
       }
     ])
   ],
-  providers: [ { provide: AWESOME_SERVICE , useClass: CustomFeatureAwesomeService  }],
+  // providers: [ { provide: AWESOME_SERVICE , useClass: CustomFeatureAwesomeService  }],
   declarations: [FeatureComponent],
   exports: [FeatureComponent]
 })
