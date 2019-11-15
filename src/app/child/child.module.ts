@@ -12,6 +12,6 @@ import { CustomChildAwesomeService } from './custom-child-awesome.service';
   ],
   declarations: [ChildComponent],
   exports: [ChildComponent],
-  providers: [ { provide: DefaultAwesomeService , useClass: CustomChildAwesomeService  } ]
+  // providers: [ { provide: DefaultAwesomeService , useClass: CustomChildAwesomeService  } ]
 })
 export class ChildModule { }

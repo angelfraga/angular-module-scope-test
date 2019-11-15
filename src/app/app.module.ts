@@ -26,6 +26,6 @@ import { ChildModule } from './child/child.module';
   ], 
   declarations: [ AppComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [ { provide: DefaultAwesomeService , useClass: CustomRootAwesomeService  }]
+  providers: [ { provide: AWESOME_SERVICE , useClass: CustomRootAwesomeService  }]
 })
 export class AppModule { }

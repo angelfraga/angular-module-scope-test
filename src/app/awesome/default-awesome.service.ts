@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AwesomeService } from './awesome-service.interface'; 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class DefaultAwesomeService implements AwesomeService {
 
   private registry = new Map<string, string>();

@@ -11,7 +11,8 @@ import { AwesomeComponent } from './awesome.component';
   declarations: [AwesomeComponent],
   exports: [
     AwesomeComponent
-  ]
+  ], 
+  providers: [ { provide: AWESOME_SERVICE , useClass: DefaultAwesomeService  }]
 })
 export class AwesomeModule {
 
