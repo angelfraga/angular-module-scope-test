@@ -9,9 +9,6 @@ import { AwesomeComponent } from './awesome.component';
     CommonModule
   ],
   declarations: [AwesomeComponent],
-  providers: [
-    { provide: AWESOME_SERVICE, useClass: DefaultAwesomeService}
-  ],
   exports: [
     AwesomeComponent
   ]
@@ -24,12 +21,9 @@ export class AwesomeModule {
     }
   }
 
-  static forChild(childProviders: Provider[]): ModuleWithProviders<AwesomeModule> {
+  static forChild(): ModuleWithProviders<AwesomeModule> {
     return {
-      ngModule: AwesomeModule,
-      providers: [
-        ...childProviders
-      ]
+      ngModule: AwesomeModule
     }
   }
 }

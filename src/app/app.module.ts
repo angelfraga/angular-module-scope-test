@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
-import { AwesomeModule, AWESOME_SERVICE } from './awesome';
+import { AwesomeModule, AWESOME_SERVICE, DefaultAwesomeService } from './awesome';
 
 import { AppComponent } from './app.component';
 import { CustomRootAwesomeService } from './custom-root-awesome.service';
@@ -13,14 +13,8 @@ import { ChildModule } from './child/child.module';
 @NgModule({
   imports:      [
     BrowserModule,
-    FormsModule,
+    FormsModule, 
     AwesomeModule,
-    /**
-     *  If 
-     *  AwesomeModule.forRoot([
-     *    { provide: AWESOME_SERVICE , useClass: CustomRootAwesomeService  }
-     *  ]),
-     */
     ChildModule, 
     RouterModule.forRoot([
       { 
@@ -30,10 +24,8 @@ import { ChildModule } from './child/child.module';
       { path: '',   redirectTo: 'feature', pathMatch: 'full' },
     ])
   ], 
-  providers: [
-    { provide: AWESOME_SERVICE , useClass: CustomRootAwesomeService  }
-  ], 
   declarations: [ AppComponent ],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent ],
+  providers: [ { provide: DefaultAwesomeService , useClass: CustomRootAwesomeService  }]
 })
 export class AppModule { }

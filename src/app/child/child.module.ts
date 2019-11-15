@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AwesomeModule, AWESOME_SERVICE } from './../awesome';
+import { AwesomeModule, AWESOME_SERVICE, DefaultAwesomeService } from './../awesome';
 
 import { ChildComponent } from './child.component';
 import { CustomChildAwesomeService } from './custom-child-awesome.service';
@@ -9,14 +9,9 @@ import { CustomChildAwesomeService } from './custom-child-awesome.service';
   imports: [
     CommonModule,
     AwesomeModule
-    /**
-     * 
-     * AwesomeModule.forChild([
-     *  { provide: AWESOME_SERVICE , useClass: CustomChildAwesomeService  }
-     * ])
-     */
   ],
   declarations: [ChildComponent],
-  exports: [ChildComponent]
+  exports: [ChildComponent],
+  providers: [ { provide: DefaultAwesomeService , useClass: CustomChildAwesomeService  } ]
 })
 export class ChildModule { }
